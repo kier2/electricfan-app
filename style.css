@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #242031;
+}
+.fan-wrapper{
+    position: relative;
+}
+
+.fan-nav{
+    position: absolute;
+    top: -220px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    /* padding: 1em 2em; */
+    /* border:1px solid #fff; */
+    gap: .13em;
+}
+.fan-nav .fan-nav-item {
+   width: inherit;
+   height: inherit;
+   padding: .5em 1em;
+   transition: all ease 200ms;
+   cursor: pointer;
+}
+
+.fan-nav-item:hover{
+    transform: scaleY(1.2);
+    opacity: .8;
+}
+.fan-nav .fan-nav-item.active{
+    transform: scaleY(1.2);
+}
+.fan-nav .fan-nav-item:nth-child(1){
+    background: #DEB043;
+}
+.fan-nav .fan-nav-item:nth-child(2){
+    background: #94DE16;
+}
+.fan-nav .fan-nav-item:nth-child(3){
+    background: #215ADE;
+}
+.fan-nav .fan-nav-item:nth-child(4){
+    background: #c22554;    
+}
+
+#Icons, .fan-inner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#Icons {
+    width: 300px;
+    height: 300px;
+    transition: ease .2s;
+    fill: #562CDE;
+}
+.force-0 {animation: rotation-zero 1s linear infinite;}
+.force-1 {animation: rotation 1s linear infinite;}
+.force-2 {animation: rotation .6s linear infinite;}
+.force-3 {animation: rotation .3s linear infinite;}
+
+#Icons path{
+    position: relative;
+    z-index: 2;
+}
+.fan-inner{
+    width: 60px;
+    height: 60px;
+    border: 10px solid #DE8B43;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+@keyframes rotation {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+@keyframes rotation-rotation-zero {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+@media(max-width:600px){
+    #Icons {
+        width: 200px;
+        height: 200px;
+        transition: ease .2s;
+        fill: #562CDE;
+    }
+    .fan-inner {
+        width: 50px;
+        height: 50px;
+        border: 10px solid #DE8B43;
+        border-radius: 50%;
+        z-index: 1;
+    }
+}
